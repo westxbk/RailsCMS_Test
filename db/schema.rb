@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516124839) do
+ActiveRecord::Schema.define(version: 20160516200638) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,11 +59,13 @@ ActiveRecord::Schema.define(version: 20160516124839) do
     t.boolean  "is_published"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "order"
   end
 
   create_table "categories", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
   end
 
   create_table "pages", force: :cascade do |t|
@@ -75,6 +77,7 @@ ActiveRecord::Schema.define(version: 20160516124839) do
     t.boolean  "menu_display"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.boolean  "featured"
   end
 
 end
